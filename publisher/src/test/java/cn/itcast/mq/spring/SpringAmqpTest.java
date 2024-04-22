@@ -19,4 +19,9 @@ public class SpringAmqpTest {
         String message = "hello, spring ampq!!!";
         rabbitTemplate.convertAndSend(queueName, message);
     }
+
+    @Test
+    public void test() {
+
+    }
 }
