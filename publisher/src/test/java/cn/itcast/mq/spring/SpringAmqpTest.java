@@ -45,6 +45,13 @@ public class SpringAmqpTest {
         rabbitTemplate.convertAndSend(exchange,"red", message);
     }
 
+    @Test
+    public void testSendTopicExchange1() {
+        String exchange = "itcast.topic";
+        String message = "hello, china.weather";
+        rabbitTemplate.convertAndSend(exchange,"china.weather", message);
+    }
+
 
 
 }
