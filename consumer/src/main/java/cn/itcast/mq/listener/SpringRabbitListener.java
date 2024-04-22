@@ -8,6 +8,7 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalTime;
+import java.util.Map;
 
 @Component
 public class SpringRabbitListener {
@@ -77,6 +78,11 @@ public class SpringRabbitListener {
     ))
     public void listenTopicQueue2(String msg){
         System.out.println("消费者2监听到topic.queue2的消息：{ " + msg + " }  " + LocalTime.now());
+    }
+
+    @RabbitListener(queues = "obj.queue")
+    public void ListenObjectQueue(Map<String, Object> msg){
+        System.out.println("接收到obj.queue 信息: " + msg);
     }
 
 }
